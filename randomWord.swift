@@ -1,6 +1,7 @@
 #!/usr/bin/swift
 
-CommandLine.arguments.remove(at: 0)
-let length: Int = CommandLine.arguments.count
+var arguments: [String] = CommandLine.arguments
+arguments.remove(at: 0)
+let length: Int = (arguments.count) - 1
 let randomNumber: Int = Int.random(in: 0...length)
-print("Das zufällig zurückgegebene Wort lautet: \(CommandLine.arguments[randomNumber])")
+print("Das zufällig zurückgegebene Wort lautet: \(arguments[randomNumber])")

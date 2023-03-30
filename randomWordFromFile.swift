@@ -1,8 +1,9 @@
 #!/usr/bin/swift
 import Foundation
 
+let argument: [String] = CommandLine.arguments
 // Name der Textdatei
-let fileName: String = "words.txt"
+let fileName: String = argument[1]
 
 // Pfad zur Textdatei im aktuellen Verzeichnis
 let currentDirectory: String = FileManager.default.currentDirectoryPath
