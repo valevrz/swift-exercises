@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		EF0729F729DAC44600F34267 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0729F629DAC44600F34267 /* ModelView.swift */; };
+		EF0729F829DAC44600F34267 /* ModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF0729F629DAC44600F34267 /* ModelView.swift */; };
 		EF226AA629D5BA2C00112873 /* DiceApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF226AA529D5BA2C00112873 /* DiceApp.swift */; };
 		EF226AA829D5BA2C00112873 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EF226AA729D5BA2C00112873 /* ContentView.swift */; };
 		EF226AAA29D5BA2D00112873 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EF226AA929D5BA2D00112873 /* Assets.xcassets */; };
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		EF0729F629DAC44600F34267 /* ModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelView.swift; sourceTree = "<group>"; };
 		EF226AA229D5BA2C00112873 /* Dice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF226AA529D5BA2C00112873 /* DiceApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiceApp.swift; sourceTree = "<group>"; };
 		EF226AA729D5BA2C00112873 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -96,6 +99,7 @@
 			children = (
 				EF226AA529D5BA2C00112873 /* DiceApp.swift */,
 				EF226AA729D5BA2C00112873 /* ContentView.swift */,
+				EF0729F629DAC44600F34267 /* ModelView.swift */,
 				EF226AA929D5BA2D00112873 /* Assets.xcassets */,
 				EF226AAB29D5BA2D00112873 /* Preview Content */,
 			);
@@ -257,6 +261,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0729F729DAC44600F34267 /* ModelView.swift in Sources */,
 				EF226AA829D5BA2C00112873 /* ContentView.swift in Sources */,
 				EF226AA629D5BA2C00112873 /* DiceApp.swift in Sources */,
 			);
@@ -266,6 +271,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF0729F829DAC44600F34267 /* ModelView.swift in Sources */,
 				EF226AB729D5BA2E00112873 /* DiceTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

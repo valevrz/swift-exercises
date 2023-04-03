@@ -8,29 +8,56 @@
 import SwiftUI
 
 struct ContentView: View {
-    @State var randomNum = 0
+    @StateObject var viewModel: DiceViewModel
+
     var body: some View {
         VStack {
-            Text("You rolled a \(randomNum)")
-                .font(.largeTitle)
-                .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            Button("roll the dice") {
-                randomNum = Int.random(in: 1...6)
+
+            let sum = viewModel.diceSum()
+            Text("Dice sum: \(sum)")
+                .font(.title2)
+
+            HStack{
+
+                ForEach(viewModel.dice, id: \.self) { value in
+                    Text("\(value)")
+                        .font(.largeTitle)
+                        .padding(.horizontal, 20.0)
+                        .padding(.vertical, 5.0)
+                        .border(Color.purple, width: 2)
+                }
             }
-            .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
-            .accentColor(.purple)
-            .border(/*@START_MENU_TOKEN@*/Color.purple/*@END_MENU_TOKEN@*/, width: /*@START_MENU_TOKEN@*/2/*@END_MENU_TOKEN@*/)
+
+            HStack{
+                Button("roll") {
+                    viewModel.rollDice()
+                }
+                .padding(.all)
+                .accentColor(.purple)
+                .border(Color.purple, width: 2)
+
+                Button("add Dice") {
+                    viewModel.addDice()
+                }
+                .padding(.all)
+                .accentColor(.purple)
+                .border(Color.purple, width: 2)
+
+                Button("delete Dice") {
+                    viewModel.deleteDice()
+                }
+                .padding(.all)
+                .accentColor(.purple)
+                .border(Color.purple, width: 2)
+            }
             
-            
-
-        }
-
-
     }
 }
 
+
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView(viewModel: DiceViewModel(numberOfDice: 2))
+        }
     }
 }
