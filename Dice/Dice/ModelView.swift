@@ -10,21 +10,23 @@ import SwiftUI
 
 class DiceViewModel: ObservableObject {
     @Published var dice: [Int]
+    @Published var faces: Int
 
-    init(numberOfDice: Int) {
-        dice = []
+    init(numberOfDice: Int, faces: Int) {
+        self.dice = []
+        self.faces = faces
         for _ in 0..<numberOfDice {
-            dice.append(Int.random(in: 1...6))
+            self.dice.append(Int.random(in: 1...faces))
         }
     }
 
     func rollDice() {
-        dice = dice.map { _ in Int.random(in: 1...6) }
+        dice = dice.map { _ in Int.random(in: 1...faces) }
     }
 
     func addDice() {
         if dice.count < 6 {
-            dice.append(Int.random(in: 1...6))
+            dice.append(Int.random(in: 1...faces))
         }
     }
 

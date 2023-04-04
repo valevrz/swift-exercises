@@ -11,7 +11,7 @@ import SwiftUI
 struct DiceApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(viewModel: DiceViewModel(numberOfDice: 2))
+            ContentView(viewModel: DiceViewModel(numberOfDice: 2, faces: 6))
         }
     }
 }

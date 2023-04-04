@@ -12,6 +12,16 @@ struct ContentView: View {
 
     var body: some View {
         VStack {
+            Picker("Faces", selection: $viewModel.faces) {
+                Text("4").tag(4)
+                Text("6").tag(6)
+                Text("8").tag(8)
+                Text("10").tag(10)
+                Text("12").tag(12)
+                Text("20").tag(20)
+            }
+            .pickerStyle(SegmentedPickerStyle())
+            .padding(.all)
 
             let sum = viewModel.diceSum()
             Text("Dice sum: \(sum)")
@@ -49,15 +59,14 @@ struct ContentView: View {
                 .padding(.all)
                 .accentColor(.purple)
                 .border(Color.purple, width: 2)
+
             }
-            
     }
 }
 
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(viewModel: DiceViewModel(numberOfDice: 2))
+        ContentView(viewModel: DiceViewModel(numberOfDice: 2, faces: 6))
         }
     }
 }
