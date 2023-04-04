@@ -10,13 +10,43 @@ import XCTest
 
 final class DiceTests: XCTestCase {
 
-    func testRoll() throws {
-        let dice = Dice(faces: 20)
+    func testInit() {
+        let dice = DiceViewModel(numberOfDice: 3).dice
+        let numOfDices = dice.count
+        XCTAssertEqual(numOfDices, 3)
+    }
 
-        for _ in 0...100 {
-            let result = dice.roll()
-            XCTAssertLessThanOrEqual(result, 20)
+    func testRollDice() {
+        let viewModel = DiceViewModel(numberOfDice: 1)
+
+        for _ in 0...50 {
+            let dice = viewModel.dice
+            viewModel.rollDice()
+            let result = dice[0]
+            XCTAssertLessThanOrEqual(result, 6)
             XCTAssertGreaterThanOrEqual(result, 1)
         }
+    }
+
+    func testAddDice() {
+        let viewModel = DiceViewModel(numberOfDice: 3)
+        let oldDiceCount = viewModel.dice.count
+        viewModel.addDice()
+        let newDiceCount = viewModel.dice.count
+        XCTAssertNotEqual(oldDiceCount, newDiceCount)
+    }
+
+    func testDeleteDice() {
+        let viewModel = DiceViewModel(numberOfDice: 2)
+        let oldDiceCount = viewModel.dice.count
+        viewModel.deleteDice()
+        let newDiceCount = viewModel.dice.count
+        XCTAssertNotEqual(oldDiceCount, newDiceCount)
+    }
+
+    func testDiceSum() {
+        let viewModel = DiceViewModel(numberOfDice: 3)
+        let diceSum = viewModel.diceSum()
+        XCTAssertEqual(diceSum, viewModel.dice.reduce(0, +))
     }
 }
