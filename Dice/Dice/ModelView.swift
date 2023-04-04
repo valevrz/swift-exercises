@@ -23,11 +23,15 @@ class DiceViewModel: ObservableObject {
     }
 
     func addDice() {
-        dice.append(Int.random(in: 1...6))
+        if dice.count < 6 {
+            dice.append(Int.random(in: 1...6))
+        }
     }
 
     func deleteDice() {
-        dice.remove(at: 0)
+        if dice.count > 0 {
+            dice.remove(at: 0)
+        }
     }
 
     func diceSum() -> Int{
