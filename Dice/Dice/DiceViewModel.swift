@@ -1,8 +1,8 @@
 //
-//  ModelView.swift
+//  DiceViewModel.swift
 //  Dice
 //
-//  Created by Virzi, Valeria (SE-5/7AFI2) on 03.04.23.
+//  Created by Virzi, Valeria (SE-5/7AFI2) on 13.04.23.
 //
 
 import Foundation
