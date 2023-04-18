@@ -11,26 +11,26 @@ struct DiceView: View {
     let value: Int
     let size: CGFloat = 100
 
+    var circle: some View {
+        Circle()
+            .fill(Color.black)
+            .frame(width: size / 5, height: size / 5)
+    }
+
     var body: some View {
         ZStack {
             RoundedRectangle(cornerRadius: 10)
                 .fill(Color.white)
                 .shadow(radius: 5)
             if value == 1 {
-                Circle()
-                    .fill(Color.black)
-                    .frame(width: size / 5, height: size / 5)
+                circle
             } else if value == 2 {
                 VStack {
                     Spacer()
-                    Circle()
-                        .fill(Color.black)
-                        .frame(width: size / 5, height: size / 5)
+                    circle
                     Spacer()
                         .frame(height: size / 3)
-                    Circle()
-                        .fill(Color.black)
-                        .frame(width: size / 5, height: size / 5)
+                    circle
                     Spacer()
                 }
             } else if value == 3 {
@@ -38,25 +38,19 @@ struct DiceView: View {
                     HStack {
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                     }
                     HStack {
                         Spacer()
                             .frame(height: size / 8)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 2.25)
                     }
                     HStack {
                         Spacer()
                             .frame(width: size / 40)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 2)
                     }
@@ -66,28 +60,20 @@ struct DiceView: View {
                     HStack {
                         Spacer()
                             .frame(height: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(height: size / 3)
                     }
                     HStack {
                         Spacer()
                             .frame(height: size / 2)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(height: size / 3)
                     }
@@ -98,31 +84,21 @@ struct DiceView: View {
                     HStack {
                         Spacer()
                             .frame(height: size / 4)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(height: size / 6)
                     }
-                    Circle()
-                        .fill(Color.black)
-                        .frame(width: size / 5, height: size / 5)
+                    circle
                     HStack {
                         Spacer()
                             .frame(width: size / 8, height: size / 4)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(height: size / 3)
                     }
@@ -131,99 +107,33 @@ struct DiceView: View {
                 VStack {
                     Spacer()
                     HStack {
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                     }
                     Spacer()
                         .frame(height: size / 7)
                     HStack {
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                     }
                     Spacer()
                         .frame(height: size / 7)
                     HStack {
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                         Spacer()
                             .frame(width: size / 3)
-                        Circle()
-                            .fill(Color.black)
-                            .frame(width: size / 5, height: size / 5)
+                        circle
                     }
                     Spacer()
                 }
-            }else if value == 7{
-                Text("7")
+            }else if value >= 7{
+                Text("\(value)")
                     .font(.largeTitle)
                     .fontWeight(.bold)
-            }else if value == 8{
-                Text("8")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 9{
-                Text("9")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 10{
-                Text("10")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 11{
-                Text("11")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 12{
-                Text("12")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 13{
-                Text("13")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 14{
-                Text("14")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 15{
-                Text("15")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 16{
-                Text("16")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 17{
-                Text("17")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 18{
-                Text("18")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 19{
-                Text("19")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else if value == 20{
-                Text("20")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
-            }else {
-                EmptyView()
             }
         }
         .frame(width: size, height: size)
