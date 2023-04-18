@@ -30,37 +30,103 @@ struct ContentView: View {
             HStack{
 
                 ForEach(viewModel.dice, id: \.self) { value in
-                    Text("\(value)")
-                        .font(.largeTitle)
-                        .padding(.horizontal, 20.0)
-                        .padding(.vertical, 5.0)
-                        .border(Color.purple, width: 2)
+                    if value == 1{
+                        DiceView(value: 1)
+                    }else if value == 2{
+                        DiceView(value: 2)
+                    }else if value == 3{
+                        DiceView(value: 3)
+                    }else if value == 4{
+                        DiceView(value: 4)
+                    }else if value == 5{
+                        DiceView(value: 5)
+                    }else if value == 6{
+                        DiceView(value: 6)
+                    }else if value == 7{
+                        DiceView(value: 7)
+                    }else if value == 8{
+                        DiceView(value: 8)
+                    }else if value == 9{
+                        DiceView(value: 9)
+                    }else if value == 10{
+                        DiceView(value: 10)
+                    }else if value == 11{
+                        DiceView(value: 11)
+                    }else if value == 12{
+                        DiceView(value: 12)
+                    }else if value == 13{
+                        DiceView(value: 13)
+                    }else if value == 14{
+                        DiceView(value: 14)
+                    }else if value == 15{
+                        DiceView(value: 15)
+                    }else if value == 16{
+                        DiceView(value: 16)
+                    }else if value == 17{
+                        DiceView(value: 17)
+                    }else if value == 18{
+                        DiceView(value: 18)
+                    }else if value == 19{
+                        DiceView(value: 19)
+                    }else if value == 20{
+                        DiceView(value: 20)
+                    }
                 }
             }
 
             HStack{
-                Button("roll") {
+                Button(action: {
                     viewModel.rollDice()
+                }) {
+                    Text("roll")
+                        .font(.system(size: 25))
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.purple, lineWidth: 2)
+                        )
                 }
-                .padding(.all)
-                .accentColor(.purple)
-                .border(Color.purple, width: 2)
 
-                Button("add Dice") {
+                Button(action: {
                     viewModel.addDice()
+                }) {
+                    Text("add Dice")
+                        .font(.system(size: 25))
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.purple, lineWidth: 2)
+                        )
                 }
-                .padding(.all)
-                .accentColor(.purple)
-                .border(Color.purple, width: 2)
 
-                Button("delete Dice") {
+                Button(action: {
                     viewModel.deleteDice()
+                }) {
+                    Text("delete Dice")
+                        .font(.system(size: 25))
+                        .fontWeight(.semibold)
+                        .padding(.vertical, 8)
+                        .padding(.horizontal, 16)
+                        .background(Color.purple)
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 10)
+                                .stroke(Color.purple, lineWidth: 2)
+                        )
                 }
-                .padding(.all)
-                .accentColor(.purple)
-                .border(Color.purple, width: 2)
-
             }
+
     }
 }
 

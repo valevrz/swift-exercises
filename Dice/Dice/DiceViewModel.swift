@@ -25,7 +25,7 @@ class DiceViewModel: ObservableObject {
     }
 
     func addDice() {
-        if dice.count < 6 {
+        if dice.count < 3 {
             dice.append(Int.random(in: 1...faces))
         }
     }
